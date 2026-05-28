@@ -90,7 +90,7 @@ export const latencyValidationMiddleware = async (
         code: "LATENCY_VIOLATION",
         details: {
           payloadTimestamp,
-          latencyDiffMs: latencyDiff,
+          latencyDiffMs: Math.round(latencyDiff),
           thresholdMs: maxLatencyMs,
         },
       });
