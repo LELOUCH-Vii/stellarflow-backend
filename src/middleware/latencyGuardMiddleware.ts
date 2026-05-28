@@ -141,7 +141,7 @@ async function logLatencyViolation(
         eventType,
         payloadTimestamp: payloadTimestamp ? new Date(payloadTimestamp) : null,
         receivedAt: new Date(),
-        latencyDiffMs,
+        latencyDiffMs: latencyDiffMs !== null ? Math.round(latencyDiffMs) : null,
         thresholdMs,
         details: JSON.stringify(details),
         resolved: false,
